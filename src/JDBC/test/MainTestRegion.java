@@ -29,5 +29,20 @@ public class MainTestRegion {
 
     }
 
+    @Test
+    public void update(){
+        Integer id = 1;
+        String Name = "South Asia";
+        boolean result = true;
+
+        RegionDao updateRegD = new RegionDao(con.getConnection());
+        Region region = new Region();
+        region.setRegionId(id);
+        region.setRegionName(Name);
+        region.setRegionId(id);
+
+        assertEquals(result, updateRegD.updateData(region));
+    }
+
     
 }
