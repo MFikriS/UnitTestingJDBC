@@ -60,4 +60,17 @@ public class MainTestDivision {
         assertEquals(result, deleteDivDao.deleteData(division));
 
     }
+
+    @Test
+    public void readData(){
+        
+        List<String> Name = ArrayList<"IT">();
+        String result = "IT";
+        DivisionDao divisionDao = new DivisionDao(con.getConnection());
+        for (Division division : divisionDao.getDataByDivisionName()) {
+            System.out.println(division.getName());
+        }
+
+        assertEquals(result, regionDao.getDataByDivisionName(Name));
+    }
 }
