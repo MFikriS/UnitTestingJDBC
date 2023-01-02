@@ -44,5 +44,15 @@ public class MainTestRegion {
         assertEquals(result, updateRegD.updateData(region));
     }
 
-    
+    @Test
+    public void delete(){
+        Integer id = 4;
+        boolean result = true;
+
+        RegionDao deleteRegD = new RegionDao(con.getConnection());
+        Region region = new Region();
+        region.setRegionId(id);
+
+        assertEquals(result, deleteRegD.delete(region));
+    }
 }
