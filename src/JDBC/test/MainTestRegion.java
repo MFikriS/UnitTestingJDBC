@@ -65,7 +65,7 @@ public class MainTestRegion {
         List<String> Name = ArrayList<"Europe">();
         String result = "Europe";
         RegionDao regionDao = new RegionDao(con.getConnection());
-        for (Region region : regionDao.getAll()) {
+        for (Region region : regionDao.getDataByRegionName()) {
             System.out.println(region.getRegionName());
         }
 
