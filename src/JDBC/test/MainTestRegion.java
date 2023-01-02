@@ -5,6 +5,8 @@ import JDBC.models.Region;
 import JDBC.tools.DBConnection;
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -56,14 +58,18 @@ public class MainTestRegion {
         assertEquals(result, deleteRegD.delete(region));
     }
 
-    /*
+    
     @Test
-    public void getAll(){
+    public void getByRegionName(){
+        
+        List<String> Name = ArrayList<"Europe">();
+        String result = "Europe";
         RegionDao regionDao = new RegionDao(con.getConnection());
         for (Region region : regionDao.getAll()) {
-            System.out.println(region.getRegionId());
             System.out.println(region.getRegionName());
         }
+
+        assertEquals(result, regionDao.getDataByRegionName(Name));
     }
-    */
+    
 }
