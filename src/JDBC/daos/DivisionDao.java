@@ -84,7 +84,7 @@ public class DivisionDao {
             String query = "Delete from division where Id = ?";
             PreparedStatement preparedStatement = con.prepareStatement(query);
             preparedStatement.setInt(1, division.getId());
-            preparedStatement.execute();
+            preparedStatement.executeUpdate();
             return true;
         } catch (SQLException e){
             e.printStackTrace();
