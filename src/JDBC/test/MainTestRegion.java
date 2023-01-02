@@ -55,4 +55,15 @@ public class MainTestRegion {
 
         assertEquals(result, deleteRegD.delete(region));
     }
+
+    /*
+    @Test
+    public void getAll(){
+        RegionDao regionDao = new RegionDao(con.getConnection());
+        for (Region region : regionDao.getAll()) {
+            System.out.println(region.getRegionId());
+            System.out.println(region.getRegionName());
+        }
+    }
+    */
 }
