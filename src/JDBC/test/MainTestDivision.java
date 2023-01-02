@@ -27,4 +27,24 @@ public class MainTestDivision {
         assertEquals(result, insertDivDao.insertData(division));
 
     }
+
+    @Test
+    public void update(){
+        //Arrange
+        Integer Id = 1;
+        String Name = "Marketing";
+        Integer regionId = 1;
+        boolean result = true;
+
+        //Act & Assert
+        DivisionDao updateDivDao = new DivisionDao(con.getConnection());
+        Division division = new Division();
+        division.setId(Id);
+        division.setName(Name);
+        division.setRegionId(regionId);
+        division.setId(Id);
+
+        assertEquals(result, updateDivDao.updateData(division));
+
+    }
 }
