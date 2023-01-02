@@ -30,13 +30,12 @@ public class MainTestDivision {
 
     @Test
     public void update(){
-        //Arrange
         Integer Id = 1;
         String Name = "Marketing";
         Integer regionId = 1;
         boolean result = true;
 
-        //Act & Assert
+        
         DivisionDao updateDivDao = new DivisionDao(con.getConnection());
         Division division = new Division();
         division.setId(Id);
@@ -45,6 +44,20 @@ public class MainTestDivision {
         division.setId(Id);
 
         assertEquals(result, updateDivDao.updateData(division));
+
+    }
+
+    @Test
+    public void delete(){
+        Integer Id = 1;
+        boolean result = true;
+
+        
+        DivisionDao deleteDivDao = new DivisionDao(con.getConnection());
+        Division division = new Division();
+        division.setId(Id);
+
+        assertEquals(result, deleteDivDao.deleteData(division));
 
     }
 }
