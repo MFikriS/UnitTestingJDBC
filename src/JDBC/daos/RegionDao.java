@@ -28,6 +28,25 @@ public class RegionDao {
         return region;
     }
 
+    
+    public List<Region> getDataByRegionName() {
+        List<Region> region = new ArrayList<>();
+        String query = "Select regionName from Region where regionName = ?";
+        try {
+            PreparedStatement preparedStatement = con.prepareStatement(query);
+            preparedStatement.setString(1, ((Region) region).getRegionName());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString(1));
+            }
+        } catch (Exception e) {
+       
+            e.printStackTrace();
+        }
+        return region;
+    }
+    
+
     public boolean insertData(Region region){
         try {
             PreparedStatement preparedStatement = con.prepareStatement("Insert INTO region(regionId, regionName) values(?,?)");
